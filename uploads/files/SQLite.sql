@@ -1,1 +1,0 @@
-SELECT * FROM shop_productimages 
