@@ -155,8 +155,8 @@ MEDIA_URL='/media/'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'lujahawhsuk02@gmail.com'
-EMAIL_HOST_PASSWORD = 'a1b2c3d4e5f6g7h8i9j10'
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = "password"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -173,13 +173,13 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # social auth settings
-SOCIAL_AUTH_FACEBOOK_KEY = '1542532732582309' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_KEY =  # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '' # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_TWITTER_KEY = '' # Twitter Consumer Key
 SOCIAL_AUTH_TWITTER_SECRET = '' # Twitter Consumer Secret
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '874759164418-0gp3ff8njsta52hspnn87e2sc8uq7slp.apps.googleusercontent.com' # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'R2fIRmI1KGPkVTqMOLRmxRXu' # Google Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =  # Google Consumer Secret
 
