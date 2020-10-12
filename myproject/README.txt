@@ -1,2 +1,0 @@
-username-myproject
-password-myproject
