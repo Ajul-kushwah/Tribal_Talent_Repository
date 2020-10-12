@@ -1,0 +1,188 @@
+{% load static %}
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="{% static './css/personal-info.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<h3>{{d}}</h3>
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="promo-title">Fly Makes You Faster</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem pariatur ducimus ab voluptatum
+                        veniam
+                        blanditiis nam dolor a, repellat dolores dolorem asperiores, obcaecati velit, numquam qui
+                        voluptatibus
+                        dolorum itaque provident.
+                    </p>
+					<div class="text-center pt-2 pb-1">
+                        <button type="submit" class="btn btn-primary">Know More</button>
+                    </div>
+					
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="container ">
+                        <div class="card mx-auto border-0">
+                            <div class="card-header border-bottom-0 bg-transparent">
+										<h3>Information</h3>
+										<form>
+                                            
+                                            <div class="form-group">
+                                                <input type="text" name="firstname" id="firstname" class="form-control"
+                                                    placeholder="Firstname" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="lastname" id="lastname" class="form-control"
+                                                    placeholder="Lastname" required>
+                                            </div>
+											<div class="form-group">
+                                                <input type="number" min="15" name="age" id="age" class="form-control"
+                                                    placeholder="Age" required>
+                                            </div>
+											<select name="Genger" class="form-control mb-3">
+												<option data-display="Gender">Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                            <div class="form-group">
+                                                <input type="tel" name="password" id="password"
+                                                    class="form-control" placeholder="Mobile no." required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="password_confirmation"
+                                                    id="password-confirm" class="form-control"
+                                                    placeholder="City" required>
+                                            </div>
+											<div class="form-group">
+                                                <input type="text" name="state"
+                                                    id="" class="form-control"
+                                                    placeholder="State" required>
+                                            </div>
+
+                                            <div class="text-center pt-2 pb-1">
+                                                <button type="submit" class="btn btn-primary">Go --></button>
+                                            </div>
+                                        </form>
+                                <!--<ul class="nav nav-tabs justify-content-center pt-4" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-primary" id="pills-login-tab" data-toggle="pill"
+                                            href="#pills-login" role="tab" aria-controls="pills-login"
+                                            aria-selected="true">Login</a>
+                                    </li>--
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" id="pills-register-tab" data-toggle="pill"
+                                            href="#pills-register" role="tab" aria-controls="pills-register"
+                                            aria-selected="false">Register</a>
+                                    </li>
+                                </ul>-->
+                            </div>
+<!---->
+                            <div class="card-body pb-4">
+                                <div class="tab-content" id="pills-tabContent">
+                                    <!--<div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                                        aria-labelledby="pills-login-tab">
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" id="email"
+                                                    placeholder="Email" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password" class="form-control"
+                                                    id="password" id="password" placeholder="Password" required>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" id="customCheck1" checked=""
+                                                    type="checkbox">
+                                                <label class="custom-control-label" for="customCheck1">Remember
+                                                    me</label>
+                                            </div>
+
+                                            <div class="text-center pt-4">
+                                                <button type="submit" id="login-btn" class="btn btn-primary">Login</button>
+                                            </div>
+
+                                            <div class="text-center pt-2">
+                                                <a class="btn btn-link text-primary" href="#">Forgot Your Password?</a>
+                                            </div>
+                                        </form>
+                                    </div>-->
+
+                                    <div class="tab-pane fade" id="pills-register" role="tabpanel"
+                                        aria-labelledby="pills-register-tab">
+                                        <form>
+
+                                            <select name="category" class="form-control mb-3">
+                                                <option value="">
+                                                    User</option>
+                                                <option value="">Company</option>
+                                            </select>
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="name" class="form-control"
+                                                    placeholder="Username" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control"
+                                                    placeholder="Email" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control" placeholder="Set a password" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password_confirmation"
+                                                    id="password-confirm" class="form-control"
+                                                    placeholder="Confirm password" required>
+                                            </div>
+
+                                            <div class="text-center pt-2 pb-1">
+                                                <button type="submit" class="btn btn-primary">Register</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

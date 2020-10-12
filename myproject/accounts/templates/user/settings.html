@@ -1,0 +1,135 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}   
+   {% load static %}
+   
+   
+   <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Update informations</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-------------- start job details area---------------------->
+
+    <div class="job_details_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        
+                        
+                        <!--   Account informations   -->
+
+                        <div class="apply_job_form white-bg">
+                                <h4>Account informations :</h4>
+                                <form method="post" action="{% url 'edit_account' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="username">Username</label>
+                                                <input type="text" name="username" value="{{user.username}}" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="firstname">Firstname</label>
+                                                <input type="text" name="firstname" value="{{user.first_name}}" placeholder="First name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="lastname">Last name</label>
+                                                <input type="text" name="lastname" value="{{user.last_name}}" placeholder="Last name">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="email">Email</label>
+                                                <input type="email" name="email" value="{{user.email}}" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+                                            <div class="submit_btn">
+                                                <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!--===== change password ======-->
+                            <div class="apply_job_form white-bg">
+                                    <h4>Change Password :</h4>
+                                    <form method="post" action="{% url 'change_password' %}">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="username">Username</label>
+                                                    <input type="text" name="username" placeholder="Username" value="{{user.username}}" disabled>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                        <label style="font-weight: bold" class="lbl" for="old-password">Old password</label>
+                                                    <input type="password" name="old-password" placeholder="Old Password" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                        <label style="font-weight: bold" class="lbl" for="new-password">New password</label>
+                                                    <input type="password" name="new-password" placeholder="New Password" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                        <label style="font-weight: bold" class="lbl" for="confirm-password">Confirm password</label>
+                                                    <input type="password" name="confirm-password" placeholder="Confirm  Password" required>
+                                                </div>
+                                            </div>
+                                            <!--ALERT-->
+                                            {% include '_alerts.html' %}
+                                            <div class="col-md-12">
+                                                <div class="submit_btn">
+                                                    <button class="boxed-btn3 w-100" type="submit">Change Password</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--===== personal informations ======-->
+     
+                    </div> 
+                    <!--   user Summery  -->
+                    <div class="col-lg-4">
+                        
+                        <div class="share_wrap d-flex">
+                            <span>Share at:</span>
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+<!----------------------end job details area------------------------->    
+{% endblock%}

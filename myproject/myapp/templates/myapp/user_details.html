@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user details</title>
+    <style>
+        .picture img{
+            border-radius:100px;
+            }
+    </style>
+</head>
+<body>
+<h1>User details :</h1>
+<p> Username : <b>{{user.username}}</b></p>
+<div class="picture">
+    <img src='/media/{{user.image}}' height="200px"  alt="...">
+</div>
+<table border="1" style="text-transform:capitalize">
+    <tr>
+        <th>User ID :</th>
+        <td>{{user.user_id}}</td>
+    </tr>
+
+    <tr>
+        <th>First Name :</th>
+        <td>{{user.firstname}}</td>
+    </tr>
+
+    <tr>
+        <th>Last Name :</th>
+        <td>{{user.lastname}}</td>
+    </tr>
+
+    <tr>
+        <th>Age :</th>
+        <td>{{user.age}}</td>
+    </tr>
+
+    <tr>
+        <th>City :</th>
+        <td>{{user.city}}</td>
+    </tr>
+
+    <tr>
+        <th>Email :</th>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+
+</body>
+</html>

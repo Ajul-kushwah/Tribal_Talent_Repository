@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{user.id}}
+<a href="{% url 'images' %}">images page</a>
+        {% for i in images %}
+        <h3>{{i.title}}</h3>
+        <img src="{{ i.image.url }}" alt="img" >
+        {% endfor %}
+</body>
+</html>

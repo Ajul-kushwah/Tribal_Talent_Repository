@@ -1,0 +1,395 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}   
+   {% load static %}
+<!--  ======================= Start Banner Area =======================  -->
+  
+    <!-- profile section -->
+    <section class="profile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">   
+                        <div class="front ">
+                            <img src="{{account.image.url}}" alt="front-img" class="front-img ">
+                            <a style="text-transform:capitalize;color: #000;" href="#" class="name">{{ user.first_name }} {{user.last_name}}</a>
+                        </div>
+                        <a style="text-transform:capitalize" href="#" class="namee">{{ user.first_name }} {{user.last_name}}</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <section>
+        <div class="container simple-text">
+            <div class="row">
+                <div class="col-3">
+                    <p>{{account.caption | safe }}
+                        Django Lover
+                       Python Developer :-)
+                       <-> <->
+                          L 
+                        )---(  
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>following {{ following }} | Followers {{ follower}}</p>
+                    <div class="site-buttons mb-2">
+                        <div class="d-flex flex-row flex-wrap">
+                            <a href="{% url 'profile_update' %}" class="genric-btn info mr-4 text-uppercase">Update</a>
+                            <a class="genric-btn info-border text-uppercase">Get cv</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+          
+        <!--  ======================= End Banner Area =======================  -->
+<!--ALERT-->
+{% include '_alerts.html' %}
+                                        
+
+    <!-------------- start job details area---------------------->
+
+    <div class="job_details_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="job_details_header">
+                            <div class="single_jobs white-bg d-flex justify-content-between">
+                                <div class="jobs_left d-flex align-items-center">
+                                    <div class="thumb">
+                                        <img src="other/img/svg_icon/1.svg" alt="">
+                                    </div>
+                                    <div class="jobs_conetent">
+                                        <a href="#"><h4>Art & Craft Engineer</h4></a>
+                                        <div class="links_locat d-flex align-items-center">
+                                            <div class="location">
+                                                <p> <i class="fa fa-map-marker"></i> Madhaya Predesh, India</p>
+                                            </div>
+                                            <div class="location">
+                                                <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jobs_right">
+                                    <div class="apply_now">
+                                        <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--------     About me        --------->
+                        <div class="descript_wrap white-bg">
+                            <div class="single_wrap">
+                                <h1>About Me</h1>
+                                <h4>Personal information :</h4>
+                                <table width=100% style="height: 100px">
+                                    <tr>
+                                        <th>First Name</th>
+                                        <td>:</td>
+                                        <td>{{user.first_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <td>:</td>
+                                        <td>{{user.last_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Age</th>
+                                        <td>:</td>
+                                        <td>{{account.age}} year</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gender</th>
+                                        <td>:</td>
+                                        <td>{{account.gender}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Father name</th>
+                                        <td>:</td>
+                                        <td>{{account.father_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Experience</th>
+                                        <td>:</td>
+                                        <td>{{account.experience}} year</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Degree</th>
+                                        <td>:</td>
+                                        <td>MBA</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Language</th>
+                                        <td>:</td>
+                                        <td>{{account.language}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Country</th>
+                                        <td>:</td>
+                                        <td>{{account.country}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>State</th>
+                                        <td>:</td>
+                                        <td>{{account.state}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>City</th>
+                                        <td>:</td>
+                                        <td>{{account.city}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Area</th>
+                                        <td>:</td>
+                                        <td>{{account.area}}</td>
+                                    </tr>
+                                </table>
+                                <pre>
+
+                                </pre>
+                                
+                                <h4>Description</h4>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                                <p></p>
+                            </div>
+                            
+
+                            <div class="single_wrap">
+                                <h4>Qualifications</h4>
+                                <ul>
+                                    <li>The applicants should have experience in the following areas.
+                                    </li>
+                                    <li>Have sound knowledge of commercial activities.</li>
+                                    <li>Leadership, analytical, and problem-solving abilities.</li>
+                                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                                </ul>
+                            </div>
+                            <div class="single_wrap">
+                                <h4>Market value</h4>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                            </div>
+                        </div>
+
+                        <!-- skill add and display -->
+                        <div class="descript_wrap white-bg mt-3">
+                            <div class="single_wrap">    
+                                <h4>Skill :</h4>
+                                {% if skill %}
+                                <ul>
+                                    {% for i in skill %}
+                                    <li>{{ i.skill_name }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <p>No skill add yet </p>
+                                {% endif %}
+                                <div class="col-md-4 mt-4">
+                                    <div class="submit_btn ">
+                                        <a><button data-toggle="modal" data-target="#skillModal" class="boxed-btn3 w-100" type="submit">Add skill</button></a>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <!-- contact add and display -->
+                        <div class="descript_wrap white-bg mt-3">
+                            <div class="single_wrap">    
+                                <h4>Contact Information :</h4>
+                                 
+                                <ul>
+                                    {% if account.email is not None %}
+                                    <li>{{ account.email }}</li>
+                                    {%  else %}<p>No contact add yet please add </p>{% endif %}
+                                    {% if account.your_mobile_no is not None %}
+                                    <li>{{ account.your_mobile_no }}</li>
+                                    {%  else %}<p>No contact add yet please add </p>{% endif %}
+                                    {% if account.website is not empty %}
+                                    <li>{{ account.website }}</li>
+                                    {%  else %}<p>No contact add yet please add </p>{% endif %}
+                                </ul>
+                                
+                                <div class="col-md-4 mt-4">
+                                    <div class="submit_btn ">
+                                        <a><button data-toggle="modal" data-target="#contactModal" class="boxed-btn3 w-100" type="submit">Add contact</button></a>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        
+
+
+
+
+                        <!-- gallary view button -->
+                        <div class="apply_job_form white-bg">
+                            <h4>Gallary:</h4>
+                            <div class="col-md-4">
+                                <div class="submit_btn">
+                                    <a href="{% url 'all_images' %}"><button class="boxed-btn3 w-100" type="submit">View Gallary</button></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="job_sumary">
+                            <div class="summery_header">
+                                <h3>User Summery</h3>
+                            </div>
+                            <div class="job_content">
+                                <ul>
+                                    <li>Join Date: <span>{{user.date_joined}}</span></li>
+                                    <li>Last login: <span>{{user.last_login}}</span></li>
+                                    <li>Salary: <span>50k - 120k/y</span></li>
+                                    <li>Location: <span>California, USA</span></li>
+                                    <li>Job Nature: <span> Full-time</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="share_wrap d-flex">
+                            <span>Share at:</span>
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                            </ul>
+                        </div>
+                        <div class="job_location_wrap">
+                            <div class="job_lok_inner">
+                                <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- ############################################################## -->
+<!-- start add skill form Modal -->
+<div class="container">
+        <div class="modal fade" id="skillModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Add Skill/Talent</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="POST" action="{% url 'add_skill' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select name="skill" class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose Skill..</option>
+                        </select>
+                    </div>  
+                  
+                  <button type="submit" class="btn btn-success">Add</button>
+                </form>
+                <hr>
+                <div class="skills">
+                    <h5>Remove Skill:</h5>
+                    {% if skill %}
+                        {% for i in skill %}
+                    <a href="{% url 'delete_skill' i.id %}"><button class="delete btn btn-outline-success ml-2 mt-2">
+                        <li>{{ i.skill_name }}<i class="fa fa-times ml-1" aria-hidden="true"></i></li>
+                    </button></a>
+                        {% endfor %}    
+                    
+                        {% else %}
+                    <p>No skill add yet </p>
+                        
+                    {% endif %}
+                </div>
+              </div>
+              <div class="modal-footer">   
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- end add skill form -->
+        
+        
+        <!--start add contact form Modal -->
+        <div class="container">
+            <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Add Skill/Talent</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="{% url 'update_user_contact' %}" >
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleTitle">Email</label>
+                            <input type="email" class="form-control" name="email" value="{{ account.email }}" id="exampleTitle" >
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTitle">Phone No.</label>
+                            <input type="number" class="form-control" name="phone" value="{{ account.your_mobile_no }}" id="exampleTitle" >
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTitle">Website</label>
+                            <input type="url" class="form-control" name="website" value="{{ account.website }}" id="exampleTitle" >
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                          
+                      
+                      <button type="submit" class="btn btn-success">Add</button>
+                    </form>
+                    <hr>
+                    <div class="">
+                        <h5>Remove Skill:</h5>
+                        {% if skill %}
+                            {% for i in skill %}
+                        <a href="{% url 'delete_skill' i.id %}"><button class="delete btn btn-outline-success ml-2 mt-2">
+                            <li>{{ i.skill_name }}<i class="fa fa-times ml-1" aria-hidden="true"></i></li>
+                        </button></a>
+                            {% endfor %}    
+                        
+                            {% else %}
+                        <p>No skill add yet </p>
+                            
+                        {% endif %}
+                    </div>
+                  </div>
+                  <div class="modal-footer">   
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--end add contact form -->
+        
+        </div>
+    </div>    
+<!----------------------end job details area------------------------->  
+
+
+    
+{% endblock %}

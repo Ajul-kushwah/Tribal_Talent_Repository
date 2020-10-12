@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Post</title>
+</head>
+<body>
+    <h1>Update Post</h1>
+    <form method="POST" >
+        {% csrf_token %}
+        <label>Title</label>
+        <input type="text" name="title" value="{{ post.title}}" >
+        <input type="hidden" id="hbody" name="body" value="{{ post.body}}" >
+        <label>Body</label>
+        <textarea name="body" value="{{ post.body}}" id="body" ></textarea>
+
+        <input type="submit" value="Update Post">
+    </form>
+<script>
+    window.onload = function(){
+
+        var body = document.getElementById('body');
+        var hbody = document.getElementById('hbody');
+        body.value = hbody.value;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All youth user</title>
+    <style>
+        .user{
+            height:50px;
+            width:250px;
+            border:1px solid;
+        }
+        .user p{
+            margin-left:20px;
+            text-transform:capitalize;
+            padding:0;
+        }
+        .user a{
+            margin-left:130px;
+            margin-bottom:200px;
+            padding:0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>All Users :</h1>
+{% for acc in account %}
+<div class="user">
+    <p>{{acc.firstname}}<a href="{% url 'user_details' acc.id %}"><button>View</button></a></p>
+</div>
+<pre>
+</pre>
+{% endfor %}
+</body>
+</html>

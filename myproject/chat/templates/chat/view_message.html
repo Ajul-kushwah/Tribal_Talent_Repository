@@ -1,0 +1,74 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="divToReload" style="background-color: #e5ddd5;">
+{% for i in chats %}
+                {% ifequal i.sender acc %}
+    <div style="text-align: right;">
+                    <div style="background-color: #dbf3c7; border:1px solid #dbf3c7;
+                                  color: black;
+                                  font-size:10px;
+                                  border-radius: 5px;
+                                  width:relative;
+                                  position: relative;
+                                  margin-top:10px;
+                                  margin-right:200px;
+                                  display: inline-block;
+                                  height: relative;
+                                  ">
+                        <h3 style="margin: 3px;">{{ i.message }}</h3>
+
+                        <div style="margin-left: 3px;margin-right: 3px;" >{{ i.date }}</div>
+                    </div>
+    </div>
+                {% else %}
+                    <div style="background-color: white; border:1px solid white;
+                                  color: black;
+                                  font-size:10px;
+                                  border-radius: 10px;
+                                  width:relative;
+                                  margin-top: 30px;
+                                  margin-left: 200px;
+                                  display: inline-block;
+                                  height: relative;">
+                        <h3 style="margin: 3px;">{{ i.message }}</h3>
+
+                        <div align="right" style="margin-left: 3px;margin-right: 3px;" >{{ i.date }}</div>
+                    </div>
+                {% endifequal %}
+    <br/>
+{% endfor %}
+<div style="margin-top: 100px;" >
+<form style="margin-left: 200px;" id="chat-form" class="form-inline my-2 my-lg-0" method="POST">
+    {% csrf_token %}
+      <input class="form-control mr-sm-2 w-75" id="message" name="message" type="search" placeholder="Write Something" aria-label="Send">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send</button>
+</form>
+</div>
+<div style="margin-top: 100px"></div>
+</div>
+<script type="text/javascript">
+
+  $(document).on('submit','#chat-form',function(e){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      $.ajax({
+          type:'POST',
+          url: 'send/'.concat('{{ id }}'),
+          data:{
+            message : $('#message').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+          },
+          success:function(){
+            $('#chat-form')[0].reset();
+            // location.reload(true);
+            $("body").load(location.href,"body");
+          }
+      });
+  });
+</script>
+</body>
+</html>

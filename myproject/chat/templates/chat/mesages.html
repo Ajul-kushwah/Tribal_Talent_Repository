@@ -1,0 +1,419 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Tuition</title>
+
+
+    <!--  Bootstrap css file  -->
+    <link rel="stylesheet" href="{% static './css/bootstrap.min.css' %}">
+
+    <!--  font awesome icons  -->
+    <link rel="stylesheet" href="{% static './css/all.min.css' %}">
+
+
+    <!--  Magnific Popup css file  -->
+    <link rel="stylesheet" href="{% static './vendor/Magnific-Popup/dist/magnific-popup.css' %}">
+
+
+    <!--  Owl-carousel css file  -->
+    <link rel="stylesheet" href="{% static './vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static './vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+
+
+    <!--  custom css file  -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+
+    <!--  Responsive css file  -->
+    <link rel="stylesheet" href="{% static './css/responsive.css' %}">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'other/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'other/css/slicknav.css' %}">
+
+    <link rel="stylesheet" href="{% static 'other/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+    /*for header section */
+
+        /*  for dropdown hover */
+
+        .header_area .main-menu ul li .submenu {
+          position: absolute;
+          left: 58%;
+          top: 120%;
+          background: #fff;
+          /* background: #F5EEF8;  */
+          width: 200px;
+          z-index: 2;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+          opacity: 0;
+          visibility: hidden;
+          text-align: left;
+          -webkit-transition: 0.6s;
+          -moz-transition: 0.6s;
+          -o-transition: 0.6s;
+          transition: 0.6s;
+          border: 1px solid gray;
+          border-radius: 4px;
+
+          margin-top:10px;
+          box-shadow: 10px 10px 35px rgba(0,0,0,0.125),
+                      -10px -10px 35px rgba(0,0,0,0.125);
+        }
+
+        .header_area .main-menu ul li .submenu li {
+          display: block;
+          margin: 0;
+        }
+
+        .header_area .main-menu ul li .submenu li a {
+          padding: 10px 15px;
+          position: inherit;
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.3s;
+          display: block;
+          color: #000;
+        }
+
+        .header_area .main-menu ul li .submenu li a::before {
+          display: none;
+        }
+
+        .header_area .main-menu ul li .submenu li:hover a {
+          color: #000;
+        }
+
+        .header_area .main-menu ul li:hover > .submenu {
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+        }
+
+        .header_area .main-menu ul li:hover > a::before {
+          opacity: 1;
+        }
+
+		.header_area .main-menu ul li  .pro{
+		margin-left:350px;
+		}
+		.header_area .main-menu ul li .submenu .fa{
+		margin-right:10px;
+		}
+
+
+        /* / for dropdown hover */
+
+
+
+        .header_area .main-menu ul li a{
+          color: #644def;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!--  ======================= Start Header Area ============================== -->
+
+    <header class="header_area">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img src="{% static './img/logo.png' %}" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--<i class="fa fa-angle-down"-->
+                            <a class="nav-link" href="#">services <span style="font-family:sans-serif; text-transform:lowercase">v</span></a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'all_youth_user' %}"><i class="fa fa-users" aria-hidden="true"></i> All users </a></li>
+                                <li><a href="{% url 'all_companies_user' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i>All company </a></li>
+                                <!-- <li><a href="elements.html">elements</a></li> -->
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">pages</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">blog</a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                        </li>
+                        {% if user.is_authenticated %}
+						<li class="nav-item">
+                            <a class="nav-link" href="#" style="font-weight:bold " >{{user.first_name}} {{user.last_name}} <span style="font-family:sans-serif; text-transform:lowercase">v</span></a>
+                            <ul class="submenu pro">
+                                <li><a href="{% url 'profile'%}"><i class="fa fa-user" aria-hidden="true"></i>Profile </a></li>
+                                <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings </a></li>
+                                <li><a href="{% url 'logout'%}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout </a></li>
+                                <!-- <li><a href="elements.html">elements</a></li> -->
+                            </ul>
+                        </li>
+
+                        {% else %}
+                        <a href="{% url 'login' %}"><button type="button"  class="btn button primary-button text-uppercas">login/Sign up</button></a>
+                        {% endif %}
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!--  ======================= End Header Area ============================== -->
+
+    <!--  ======================= Start Main Area ================================ -->
+<main class="site-main">
+
+        <!--  ======================= Start Banner Area =======================  -->
+        <section class="site-banner">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-12 site-title">
+                      <h3 class="title-text">Please</h3>
+                      <h1 class="title-text text-uppercase">Contact with us</h1>
+                      <h4 class="title-text text-uppercase">for better convenience</h4>
+                      <div class="site-buttons">
+                          <div class="d-flex flex-row flex-wrap">
+                              <button type="button" class="btn button primary-button mr-4 text-uppercase">hire
+                                  me</button>
+                              <button type="button" class="btn button secondary-button text-uppercase">Get cv</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12 banner-image">
+                      <img src="{% static './img/banner/banner-image.png' %}" alt="banner-img" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--  ======================= End Banner Area =======================  -->
+
+
+    
+    <!-- bradcam_area  -->
+    <!-- <div class="bradcam_area bradcam_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text">
+                            <h3>contact</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--/ bradcam_area  -->
+        
+      <!-- ================ contact section start ================= -->
+      
+      <!-- ================ chat section start ================= -->
+    
+      <div id="divToReload" style="background-color: #e5ddd5;">
+        {% for i in chats %}
+                        {% ifequal i.sender acc %}
+            <div style="text-align: right;">
+                            <div style="background-color: #dbf3c7; border:1px solid #dbf3c7;
+                                          color: black;
+                                          font-size:10px;
+                                          border-radius: 5px;
+                                          width:relative;
+                                          position: relative;
+                                          margin-top:10px;
+                                          margin-right:200px;
+                                          display: inline-block;
+                                          height: relative;
+                                          ">
+                                <h3 style="margin: 3px;">{{ i.message }}</h3>
+        
+                                <div style="margin-left: 3px;margin-right: 3px;" >{{ i.date }}</div>
+                            </div>
+            </div>
+                        {% else %}
+                            <div style="background-color: white; border:1px solid white;
+                                          color: black;
+                                          font-size:10px;
+                                          border-radius: 10px;
+                                          width:relative;
+                                          margin-top: 30px;
+                                          margin-left: 200px;
+                                          display: inline-block;
+                                          height: relative;">
+                                <h3 style="margin: 3px;">{{ i.message }}</h3>
+        
+                                <div align="right" style="margin-left: 3px;margin-right: 3px;" >{{ i.date }}</div>
+                            </div>
+                        {% endifequal %}
+            <br/>
+        {% endfor %}
+        <div style="margin-top: 100px;" >
+        <form style="margin-left: 200px;" id="chat-form" class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+              <input class="form-control mr-sm-2 w-75" id="message" name="message" type="search" placeholder="Write Something" aria-label="Send">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send</button>
+              <pre>
+
+
+                
+              </pre>
+        </form>
+        </div>
+        <div style="margin-top: 100px"></div>
+        </div>
+        
+      <!-- ================ chat section start ================= -->
+      
+
+
+</main>
+<!--  ======================= End Main Area ================================ -->
+
+
+<footer class="footer-area">
+  <div class="container">
+      <div class="">
+          <div class="site-logo text-center py-4">
+              <a href="#"><img src="{% static  './img/logo.png'%} " alt="logo"></a>
+          </div>
+          <div class="social text-center">
+              <h5 class="text-uppercase">Follow me</h5>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="copyrights text-center">
+              <p class="para">
+                  Copyright ©2019 All rights reserved | This template is made with by
+                  <a href="#"><span style="color: var(--primary-color);">Tribal Talent</span></a>
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!--  ======================= End Footer Area ============================== -->
+<script type="text/javascript">
+        
+    $(document).on('submit','#chat-form',function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        $.ajax({
+            type:'POST',
+            url: 'send/'.concat('{{ id }}'),
+            data:{
+              message : $('#message').val(),
+              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            },
+            success:function(){
+              $('#chat-form')[0].reset();
+              // location.reload(true);
+              $("body").load(location.href,"body");
+            }
+        });
+    });
+  </script>
+
+<!--  Jquery js file  -->
+<script src="{% static './js/jquery.3.4.1.js' %}"></script>
+
+<!--  Bootstrap js file  -->
+<script src="{% static './js/bootstrap.min.js' %}"></script>
+
+<!--  isotope js library  -->
+<script src="{% static './vendor/isotope/isotope.min.js' %}"></script>
+
+<!--  Magnific popup script file  -->
+<script src="{% static './vendor/Magnific-Popup/dist/jquery.magnific-popup.min.js' %}"></script>
+
+<!--  Owl-carousel js file  -->
+<script src="{% static './vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+<!--  custom js file  -->
+<script src="{% static './js/main.js' %}"></script>
+
+
+<!--=====================other==============================-->
+
+<!-- link that opens popup -->
+<!-- JS here -->
+<script src="{% static 'other/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'other/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'other/js/popper.min.js' %}"></script>
+<script src="{% static 'other/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'other/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'other/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'other/js/ajax-form.js' %}"></script>
+<script src="{% static 'other/js/waypoints.min.js' %}"></script>
+<script src="{% static 'other/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'other/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'other/js/scrollIt.js' %}"></script>
+<script src="{% static 'other/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'other/js/wow.min.js' %}"></script>
+<script src="{% static 'other/js/nice-select.min.js' %}"></script>
+<script src="{% static 'other/js/jquery.slicknav.min.js' %}"></script>
+<script src="{% static 'other/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'other/js/plugins.js' %}"></script>
+<!-- <script src="js/gijgo.min.js"></script> -->
+<script src="{% static 'other/js/range.js' %}"></script>
+
+
+
+<!--contact js-->
+<script src="{% static 'other/js/contact.js' %}"></script>
+<script src="{% static 'other/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'other/js/jquery.form.js' %}"></script>
+<script src="{% static 'other/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'other/js/mail-script.js' %}"></script>
+
+
+<script src="{% static 'other/js/main.js' %}"></script>
+
+<!--=====================other==============================-->
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add informations</title>
+
+</head>
+<body>
+<h3>Add informations :</h3>
+
+<div>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="Firstname">First Name :</label>
+            <input name="firstname" type="text" class="form-control" id="Firstname" value="{{ account.firstname }}"required>
+        </div>
+
+        <div class="form-group">
+            <label for="Lastname">Last Name :</label>
+            <input name="lastname" type="text" class="form-control" id="Lastname" value="{{ account.lastname }}"required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age :</label>
+            <input name="age" type="text" class="form-control" id="age" value="{{ account.age }}"required>
+        </div>
+        <div class="form-group">
+            <label >Highest Qualification :</label>
+            <input name="highestqualification" type="radio" value="high school"required>High School
+            <input name="highestqualification" type="radio" value="higher secondary school"required>Higher Secondary School
+            <input name="highestqualification" type="radio"  value="graduation"required>Graduation
+        </div>
+        <div class="form-group">
+            <label for="city">City :</label>
+            <input name="city" type="text" class="form-control" id="city" value="{{account.city}}"required>
+        </div>
+        <button type="submit" >Submit</button><br>
+
+    </form>
+
+</div>
+</body>
+</html>

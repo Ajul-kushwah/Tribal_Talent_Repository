@@ -1,0 +1,38 @@
+/* -------- BASIC SATUP -------- */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  
+}
+/* -------- HOME -------- */
+
+#home {
+  background-image: linear-gradient(to right bottom, #3498db, #74b9ff);
+  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+  /* padding-top: 10%; */
+}
+
+.promo-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 100px;
+  color:white;
+}
+.card {
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+.login-btn{
+	width:600px;
+	height:200px;
+
+}

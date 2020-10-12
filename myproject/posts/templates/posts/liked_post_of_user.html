@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liked post of user</title>
+</head>
+<body>
+<h1>Liked Post :</h1>
+    {% for i in post %}
+        <h2>{{ i.title }}</h2>
+        <p>{{ i.body }}</p>
+        <small>Author: {{ i.author }}</small>
+
+        <form action="{% url 'like-post' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="post_id" value="{{ i.id }}">
+            {% if user not in obj.liked.all %}
+                <button type="submit">Like</button>
+            {% else %}
+                <button type="submit">Unlike</button>
+            {% endif %}
+
+            <strong>{{ i.liked.all.count }} likes</strong>
+        </form>
+    {% endfor %}
+</body>
+</html>

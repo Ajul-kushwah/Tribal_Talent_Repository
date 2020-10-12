@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+</head>
+<body>
+    <h1>Add Post</h1>
+    <form method="POST" >
+        {% csrf_token %}
+
+        {{ form.media }}
+        {{ form.as_p }}
+<!--        <label>Title</label>-->
+<!--        {{ form.title }}</br></br>-->
+<!--        <label>Body</label>-->
+<!--        {{ form.body | safe }}</br></br>-->
+        <input type="submit" value="create post">
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All company user</title>
+    <style>
+        .user{
+            height:50px;
+            width:250px;
+            border:1px solid;
+        }
+        .user p{
+            margin-left:20px;
+            text-transform:uppercase;
+            text-color:black solid;
+            font-weight: 200 bold;
+        }
+        .user a{
+            margin-left:130px;
+            margin-bottom:200px;
+            padding:0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>All Companies :</h1>
+{% for acc in account %}
+<div class="user">
+    <p>{{acc.company_name}}</p><p><a href="{% url 'company_details' acc.id %}"><button>View</button></a></p>
+</div>
+<pre>
+</pre>
+{% endfor %}
+</body>
+</html>

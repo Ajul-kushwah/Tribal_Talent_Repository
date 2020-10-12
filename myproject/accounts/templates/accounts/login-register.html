@@ -1,0 +1,203 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <title>Tribal Talent Repository</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="{% static './css/index.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <style>
+            
+            .bg-ligh{
+                /* background-image: linear-gradient(to right bottom, #3498db, #74b9ff); */
+                background:#3498db;
+            }
+            /* .navbar-brand{
+                margin-left:20px;
+            } */
+            /* .form-group{
+                margin-top:20px;
+            } */
+            /* .navbar-nav{
+                margin-left:800px;
+            } */
+            h4{
+                display: flex;
+                flex-direction: row;
+            }
+            h4:before,
+            h4:after{
+                content: "";
+                flex: 1 1;
+                border-bottom: 2px solid gray;
+                margin: auto;
+            }
+            </style>
+
+
+
+
+    </head>
+
+<body>
+<!--<div>
+    {% for message in messages %}
+    <h4> {{ message }} </h4>
+    {% endfor%}
+</div>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-ligh">
+    <a class="navbar-brand text-white" href="#">Tribal Talent</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a style="color:white"class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        <!-- <a style="color:white" class="nav-item nav-link" href="#">Features</a> -->
+        <a style="color:white" class="nav-item nav-link" href="{% url 'about' %}">About us</a>
+        <a style="color:white" class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="promo-title">Fly Makes You<br>Faster</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem pariatur ducimus ab voluptatum
+                        veniam
+                        blanditiis nam dolor a, repellat dolores dolorem asperiores, obcaecati velit, numquam qui
+                        voluptatibus
+                        dolorum itaque provident.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="container ">
+                        <div class="card mx-auto border-0">
+                            <div class="card-header border-bottom-0 bg-transparent">
+                                <ul class="nav nav-tabs justify-content-center pt-4" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-primary" id="pills-login-tab" data-toggle="pill"
+                                            href="#pills-login" role="tab" aria-controls="pills-login"
+                                            aria-selected="true">Login</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" id="pills-register-tab" data-toggle="pill"
+                                            href="#pills-register" role="tab" aria-controls="pills-register"
+                                            aria-selected="false">Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body pb-4">
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                                        aria-labelledby="pills-login-tab">
+                                        <!--ALERT-->
+                                            {% include '_alerts.html' %}
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input type="text" name="username" class="form-control" id="username"
+                                                    placeholder="Username" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password" class="form-control"
+                                                     id="password" placeholder="Password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+                                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="submit" id="login-btn" class="btn btn-primary btn-block">Login</button>
+                                            
+                                            <div class="text-center pt-2">
+                                                <a class="btn btn-link text-primary" href="{% url 'forget' %}">Forgot Your Password?</a>
+                                            </div>
+                                        </form>
+                                        <h4 class="mb-2"> <small class="ml-2 mr-2">OR</small> </h4>
+                                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger btn-block ">Google</a>
+                                        <button class="btn btn-primary btn-block ">Facebook</button>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="pills-register" role="tabpanel"
+                                        aria-labelledby="pills-register-tab">
+                                        <!--ALERT-->
+                                            {% include '_alerts.html' %}
+                                        <form method="post" action="{% url 'register' %}">
+                                            {% csrf_token %}
+                                            <select name="category" class="form-control mb-3">
+                                                <option  value="youth-user">
+                                                    User</option>
+                                                <option  value="company-user">Company</option>
+                                            </select>
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="name" class="form-control"
+                                                    placeholder="Username" required autofocus>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control"
+                                                    placeholder="Email" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password"
+                                                    class="form-control" placeholder="Set a password" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password2"
+                                                    id="password-confirm" class="form-control"
+                                                    placeholder="Confirm password" required>
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" name="terms" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">I accept all <a href="#"> terms and conditions. </a></label>
+                                            </div>
+                                            <div class="text-center pt-2 pb-1">
+                                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br>
+<br>
+<br>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

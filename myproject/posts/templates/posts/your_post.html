@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Post</title>
+</head>
+<body>
+    <h1>Your Post</h1>
+    <div>
+        {% for i in your_post %}
+        <div>
+            <h2>Title : {{ i.title }}</h2>
+            <p>Body : {{ i.body | safe }}</p>
+            <p>Created at : {{ i.created }}</p>
+            <a href="{% url 'delete-post' i.id %}"><button>Delete</button></a>
+            <a href="{% url 'update-post' i.id %}"><button>Update</button></a>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

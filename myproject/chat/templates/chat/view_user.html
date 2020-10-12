@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<body>
+{% for i in users %}
+    <table cellpadding="10px">
+        <tr>
+            <td>
+            	{% if company %}
+                <h4><a href="{% url 'view-message' i.company_username %}">{{ i.company_username }}</a></h4>
+            	{% else %}
+            	<h4><a href="{% url 'view-message' i.username %}">{{ i.username }}</a></h4>
+            	{% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <hr />
+{% endfor %}
+
+<h6>'{'%' url 'view-message' i.id '%'}'</h6>
+</body>
+</html>

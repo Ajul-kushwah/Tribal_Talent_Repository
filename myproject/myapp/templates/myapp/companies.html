@@ -1,0 +1,329 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}   
+   {% load static %}
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,700&display=swap"
+     rel="stylesheet"> -->
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <h3 class="title-text">Hey</h3>
+                    <h1 class="title-text text-uppercase" style="color: #fff;">We Promotes</h1>
+                    <h4 class="title-text text-uppercase">Tribal's Talent</h4>
+                    
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img src="{% static './img/banner/home.png' %}" alt="banner-img" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area plus_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="job_filter white-bg">
+                            <div class="form_inner white-bg">
+                                <h3>Filter</h3>
+                                <formm action="#">
+                                    <div class="row">
+                                        <form method="GET" action="{% url 'search_company_user' %}" >
+                                            {% csrf_token %}
+                                            <div class="col-lg-12">
+                                                <div class="single_field">
+                                                    <input type="text"  name="qq" value="{{ request.GET.q }}" placeholder="Search keyword" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="single_field">
+                                                    <div class="reset_btn">
+                                                        <button  class="boxed-btn3 w-100" type="submit">Search</button>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </form>
+                                        <h4>.</h4>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="single_field">
+                                                <select class="wide">
+                                                    <option data-display="Location">Location</option>
+                                                    <option value="1">US</option>
+                                                    <option value="2">India</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="single_field">
+                                                <select class="wide">
+                                                    <option data-display="Category">Category</option>
+                                                    <option value="1">Private</option>
+                                                    <option value="2">Government</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="single_field">
+                                                <select class="wide">
+                                                    <option data-display="Company type">type</option>
+                                                    <option value="1">sports</option>
+                                                    <option value="2">singing</option>
+                                                    <option value="1">social seva</option>
+                                                    <option value="2">dancing</option>
+                                                    <option value="1">clothing</option>
+                                                    <option value="2">art & craft</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="reset_btn">
+                                <button  class="boxed-btn3 w-100" type="submit">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="recent_joblist_wrap">
+                            <div class="recent_joblist white-bg ">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h4>Company Listing</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="serch_cat d-flex justify-content-end">
+                                            <select>
+                                                <option data-display="Most Recent">Most Recent</option>
+                                                <option value="1">Marketer</option>
+                                                <option value="2">Wordpress </option>
+                                                <option value="4">Designer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="job_lists m-0">
+                            <div class="row">
+                                {% for company in account %}
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="{% static 'img/svg_icon/2.svg' %}" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="{% url 'company_user_details' company.id %}"><h4 style="text-transform: capitalize">{{ company.company_name }}</h4></a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-snowflake-o"></i> Type, {{ company.company_type }}</p>
+                                                        <p> <i class="fa fa-check-circle"></i> Class, {{ company.class_of_company }}</p>
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-registered"></i> Estd, {{company.establishment_year}}</p>
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                        <p> <i class="fa fa-list-ol"></i> Employees, {{company.no_of_employee}}</p>
+                                                    </div>
+													<!-- <div class="location">
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="{% url 'company_user_details' company.id %}" class="boxed-btn3">View more</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /user details -->
+                                {% endfor %}
+
+                                <!-- <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="other/img/svg_icon/2.svg" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="job_details.html"><h4>Digital Marketer</h4></a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-snowflake-o"></i> Type, Sports</p>
+                                                        <p> <i class="fa fa-check-circle"></i> Class, Private</p>
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-registered"></i> Estd, 2001</p>
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                        <p> <i class="fa fa-list-ol"></i> Employees, 100-200</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="img/svg_icon/3.svg" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="job_details.html"><h4>Wordpress Developer</h4></a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="img/svg_icon/4.svg" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="job_details.html"><h4>Visual Designer</h4></a>
+                                                
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="img/svg_icon/5.svg" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="job_details.html"><h4>Software Engineer</h4></a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="single_jobs white-bg d-flex justify-content-between">
+                                        <div class="jobs_left d-flex align-items-center">
+                                            <div class="thumb">
+                                                <img src="img/svg_icon/1.svg" alt="">
+                                            </div>
+                                            <div class="jobs_conetent">
+                                                <a href="job_details.html"><h4>Creative Designer</h4></a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    </div>
+                                                    <div class="location">
+                                                        <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jobs_right">
+                                            <div class="apply_now">
+                                                <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
+                                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                            </div>
+                                            <div class="date">
+                                                <p>Date line: 31 Jan 2020</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="pagination_wrap">
+                                        <ul>
+                                            <li><a href="#"> <i class="ti-angle-left"></i> </a></li>
+                                            <li><a href="#"><span>01</span></a></li>
+                                            <li><a href="#"><span>02</span></a></li>
+                                            <li><a href="#"> <i class="ti-angle-right"></i> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- job_listing_area_end  -->
+    
+
+{% endblock %}

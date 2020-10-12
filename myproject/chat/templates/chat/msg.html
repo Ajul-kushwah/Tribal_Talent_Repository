@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>msg</title>
+</head>
+<body>
+<h1>Messages :</h1>
+{% for i in message%}
+<h4>{{i.message }}    {{i.date }}</h4>
+{% endfor %}
+<form method="post" >
+    {% csrf_token %}
+    <input type="text" name="msg" placeholder="write your msg here">
+    <input type="submit">
+</form>
+</body>
+</html>

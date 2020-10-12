@@ -1,0 +1,359 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}   
+   {% load static %}
+   
+   
+   <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Update informations</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-------------- start job details area---------------------->
+
+    <div class="job_details_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="job_details_header">
+                            <div class="single_jobs white-bg d-flex justify-content-between">
+                                <div class="jobs_left d-flex align-items-center">
+                                    <div class="thumb">
+                                        <img src="other/img/svg_icon/1.svg" alt="">
+                                    </div>
+                                    <div class="jobs_conetent">
+                                        <a href="#"><h4>Software Engineer</h4></a>
+                                        <div class="links_locat d-flex align-items-center">
+                                            <div class="location">
+                                                <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                            </div>
+                                            <div class="location">
+                                                <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jobs_right">
+                                    <div class="apply_now">
+                                        <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- upload photos secssion -->
+                        <div class="apply_job_form white-bg">
+                                <h4>Upload profile Picture & Cover :</h4>
+                                <!--ALERT-->
+                                {% include '_alerts.html' %}
+                                        
+                                <form method="post" action="{% url 'upload_profile_photo' %}"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        
+                                        <div class="col-md-6">
+                                            <label style="font-weight: bold" class="lbl" for="email">uplode profile photo</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                  </button>
+                                                </div>
+                                                <div class="custom-file">
+                                                  <input type="file" name="profile_photo" accept="image/*" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" required>
+                                                  <label class="custom-file-label" for="inputGroupFile03">Upload profile picture</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="submit_btn">
+                                                <label style="font-weight: bold" class="lbl" for="email">.</label>
+                                                <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>    
+
+                                <form method="post" action="{% url 'upload_cover_photo' %}"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        
+                                        <div class="col-md-6">
+                                            <label style="font-weight: bold" class="lbl" for="">uplode cover photo</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                  </button>
+                                                </div>
+                                                <div class="custom-file">
+                                                  <input type="file" name="cover_photo" accept="image/*" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" required>
+                                                  <label class="custom-file-label" for="inputGroupFile03">Upload Cover picture</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="submit_btn">
+                                                    <label style="font-weight: bold" class="lbl" for="email">.</label>
+                                                <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>
+                        
+                        <!-- About/caption section -->
+                        <div class="apply_job_form white-bg">
+                            <h4>Caption :</h4>
+                            <!--ALERT-->
+                            {% include '_alerts.html' %}
+                                    
+                            <form method="post" action="{% url 'add_aption' %}"  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        {{ form.media }}
+                                        {{ form.as_p }}
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="submit_btn">
+                                            <label style="font-weight: bold" class="lbl" for="email">.</label>
+                                            <button class="boxed-btn3 w-100" type="submit">Add Caption</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>    
+
+                    </div>
+                    
+                        <!--===== personal informations ======-->
+    
+                        <div class="apply_job_form white-bg">
+                            <h4>Update personal informations :</h4>
+                            <form method="post" action="{% url 'update_user_info' %}">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="father_name">Father's name</label>
+                                            <input type="text" name="father_name" value="{{ account.father_name }}"placeholder="Father/Mother's name(optional)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="father mobile no.">Father's Mobile no.</label>
+                                            <input type="tel" name="father mobile no." value="{{ account.father_mobile_no }}" placeholder="Father's Mobile No.(optional)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="your age">Your age</label>
+                                            <input type="number" name="your age" value="{{ account.age }}" placeholder="Your Age">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="mobile no.">Your Mobile no.</label>
+                                            <input type="tel" name="your mobile no."  value="{{ account.your_mobile_no }}" placeholder="Your Mobile No.">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="gender">Gender :<span style="font-size: 20px; text-transform: capitalize; "> {{ account.gender }}</span></label>
+                                                <select name="gender" class="wide">
+                                                    <option data-display="Gender">Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                            
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="state">State :<span style="font-size: 20px; text-transform: capitalize; "> {{ account.state }}</span></label>
+                                                <select name="state"  class="wide">
+                                                    <option data-display="State">State</option>
+                                                    <option value="male">Madhaya Predesh</option>
+                                                    <option value="female">Utter Predesh</option>
+                                                    
+                                                    <option value="male">Himachal Predesh</option>
+                                                    <option value="female">Chhattis Garh</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    
+                                    <pre>
+
+                                    </pre>
+                                    <div class="col-md-12">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="area">Area</label>
+                                            <input type="text" name="area" value="{{ account.area }}" placeholder="House no.,Area/colony name">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-6 input-group-icon mt-10">
+                                        <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
+                                        <input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Address'" required class="single-input">
+                                    </div> -->
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="city">City</label>
+                                            <input type="text" name="city" value="{{ account.city }}" placeholder="City">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="city pincode">City pincode</label>
+                                            <input type="text" name="city pincode" value="{{ account.city_pincode }}" placeholder="City Pincode ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="highqualification">Highest Qualification :<span style="font-size: 20px; text-transform: capitalize; "> {{ account.highqualification }}</span></label>
+                                                <select name="highqualification" class="wide">
+                                                    <option data-display="Qualifications">Qualifications</option>
+                                                    <option value="No Qualified">No Qualified</option>
+                                                    <option value="primary school">primary school</option>
+                                                    <option value="Middle school">Middle school</option>
+                                                    <option value="High school">High school</option>
+                                                    <option value="High secondary school">High secondary school</option>   
+                                                    <option value="Graduate">Graduate</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="experience">Experience</label>
+                                            <input type="text" name="experience" value="{{ account.experience }}" placeholder="Experience">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="language">Language</label>
+                                            <input type="text" name="language" value="{{ account.language }}" placeholder="Language">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="input_field">
+                                            <textarea name="#" id="" cols="30" rows="10" placeholder="Describe Your Talent/Skills in detailed"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="submit_btn">
+                                            <button class="boxed-btn3 w-100" type="submit">Save informations</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--===== personal informations ======-->
+                        <pre>
+
+                        </pre>
+                        <div class="descript_wrap white-bg">
+                            <div class="single_wrap">
+                                <h4>Responsibility</h4>
+                                <ul>
+                                    <li>The applicants should have experience in the following areas.
+                                    </li>
+                                    <li>Have sound knowledge of commercial activities.</li>
+                                    <li>Leadership, analytical, and problem-solving abilities.</li>
+                                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                                </ul>
+                            </div>
+                            <div class="single_wrap">
+                                <h4>Qualifications</h4>
+                                <ul>
+                                    <li>The applicants should have experience in the following areas.
+                                    </li>
+                                    <li>Have sound knowledge of commercial activities.</li>
+                                    <li>Leadership, analytical, and problem-solving abilities.</li>
+                                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                                </ul>
+                            </div>
+                            <div class="single_wrap">
+                                <h4>Benefits</h4>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                            </div>
+                        </div>
+                        
+                    </div> 
+                    <!--   user Summery  -->
+                    <div class="col-lg-4">
+                        <div class="job_sumary">
+                            <div class="summery_header">
+                                <h3>User Summery</h3>
+                            </div>
+                            <div class="job_content">
+                                <ul>
+                                    <li>Published on: <span>12 Nov, 2019</span></li>
+                                    <li>Vacancy: <span>2 Position</span></li>
+                                    <li>Salary: <span>50k - 120k/y</span></li>
+                                    <li>Location: <span>California, USA</span></li>
+                                    <li>Job Nature: <span> Full-time</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="share_wrap d-flex">
+                            <span>Share at:</span>
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                            </ul>
+                        </div>
+                        <div class="job_location_wrap">
+                            <div class="job_lok_inner">
+                                <div id="map" style="height: 200px;"></div>
+                                <script>
+                                  function initMap() {
+                                    var uluru = {lat: -25.363, lng: 131.044};
+                                    var grayStyles = [
+                                      {
+                                        featureType: "all",
+                                        stylers: [
+                                          { saturation: -90 },
+                                          { lightness: 50 }
+                                        ]
+                                      },
+                                      {elementType: 'labels.text.fill', stylers: [{color: '#ccdee9'}]}
+                                    ];
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                      center: {lat: -31.197, lng: 150.744},
+                                      zoom: 9,
+                                      styles: grayStyles,
+                                      scrollwheel:  false
+                                    });
+                                  }
+                                  
+                                </script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!----------------------end job details area------------------------->    
+{% endblock%}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+
+</head>
+<body>
+<h3>Edit details :</h3>
+
+<div>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="exampleInputFirstname1">Username</label>
+            <input name="username" type="text" class="form-control" id="exampleInputFirstname1" value="{{ user.username }}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFirstname2">First Name</label>
+            <input name="firstname" type="text" class="form-control" id="exampleInputFirstname2" value="{{ user.first_name }}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputLastname1">Last Name</label>
+            <input name="lastname" type="text" class="form-control" id="exampleInputLastname1" value="{{ user.last_name }}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="email" type="text" class="form-control" id="exampleInputEmail1" value="{{ user.email }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button><br>
+
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{ message }} </h3>
+        {% endfor%}
+    </div>
+
+</div>
+</body>
+</html>

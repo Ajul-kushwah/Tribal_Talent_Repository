@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company informations</title>
+</head>
+<body>
+<h1>Company Informations :</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{account.company_name}}" placeholder="Company Name" required><br>
+    <input type="text" name="type" value="{{account.company_type}}" placeholder="eg. sports/art etc. " required><br>
+    <input type="text" name="location" value="{{account.location}}" placeholder="location eg. pune/noida/delhi etc." required><br>
+    <textarea type="text" name="company_desc" value="{{account.company_desc}}" placeholder="About company" required></textarea><br>
+    <input type="submit">
+</form>
+</body>
+</html>

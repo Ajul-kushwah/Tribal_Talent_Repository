@@ -1,0 +1,398 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}   
+   {% load static %}
+    
+   <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Company({{ user.username }}) Update informations </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-------------- start job details area---------------------->
+
+    <div class="job_details_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                
+                        <div class="apply_job_form white-bg">
+                            <h4>Upload profile Picture & Cover :</h4>
+                            <form method="post" action="{% url 'upload_profile_photo' %}"  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    
+                                    <div class="col-md-6">
+                                        <label style="font-weight: bold" class="lbl" for="email">uplode profile photo</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                              <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                              </button>
+                                            </div>
+                                            <div class="custom-file">
+                                              <input type="file" name="profile_photo" accept="image/*" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" required>
+                                              <label class="custom-file-label" for="inputGroupFile03">Upload profile picture</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="submit_btn">
+                                            <label style="font-weight: bold" class="lbl" for="email">.</label>
+                                            <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>    
+
+                            <form method="post" action="{% url 'upload_cover_photo' %}"  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    
+                                    <div class="col-md-6">
+                                        <label style="font-weight: bold" class="lbl" for="">uplode cover photo</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                              <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                              </button>
+                                            </div>
+                                            <div class="custom-file">
+                                              <input type="file" name="cover_photo" accept="image/*" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" required>
+                                              <label class="custom-file-label" for="inputGroupFile03">Upload Cover picture</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    <div class="col-md-6">
+                                        <div class="submit_btn">
+                                                <label style="font-weight: bold" class="lbl" for="email">.</label>
+                                            <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                    
+                        </div>
+
+                        <!--   Account informations   -->
+
+                        <div class="apply_job_form white-bg">
+                                <h4>Account informations :</h4>
+                                <form method="post" action="{% url 'edit_account' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="username">Username</label>
+                                                <input type="text" name="username" placeholder="Username" value="{{ user.username }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="email">Email</label>
+                                                <input type="email" name="email" placeholder="Company Email" value="{{ account.company_email }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="firstname">Company name</label>
+                                                <input type="text" name="firstname" placeholder="Company name" value="{{ user.first_name }}" required>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-md-12">
+                                            <div class="submit_btn">
+                                                <button class="boxed-btn3 w-100" type="submit">Change now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!--===== change password ======-->
+                            <div class="apply_job_form white-bg">
+                                    <h4>Change Password :</h4>
+                                    <form method="post" action="{% url 'change_password' %}">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                    <input type="text" placeholder="Username" value="{{ account.company_username }}" disabled>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                    <input type="password" name="old-password" placeholder="Old Password " required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                    <input type="password" name="new-password" placeholder="New Password" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input_field">
+                                                    <input type="password" name="confirm-password" placeholder="Confirm  Password" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12">
+                                                <div class="submit_btn">
+                                                    <button class="boxed-btn3 w-100" type="submit">Change Password</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--===== personal informations ======-->
+    
+
+                        <div class="apply_job_form white-bg">
+                            <h4>Update company informations :</h4>
+                            <form method="POST"  action="{% url 'update_company_info' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                            <label style="font-weight: bold" class="lbl" for="registration_no">Registration no.</label>
+                                            <input type="text" name="registration_no" value="{{account.registration_no}}" placeholder="Company Registration No.">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="trending_name">Company Trending name</label>
+                                            <input type="text" name="trending_name" value="{{account.company_trending_name}}"  placeholder="Company Trending name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="company_type">Company type</label>
+                                            <input type="text" name="company_type" value="{{account.company_type}}"  placeholder="Company type">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="establishment">Establishment year</label>
+                                            <input type="years" name="establishment" value="{{account.establishment_year}}"  placeholder="Establishment Year">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="landline_no">Landline no.</label>
+                                            <input type="tel" name="landline_no"  value="{{account.landline_no}}" placeholder="Landline No.">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="fax_no">Fax no.</label>
+                                            <input type="tel" name="fax_no"  value="{{account.fax_no}}" placeholder="Fax No.">
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="no_of_employee">No of employee</label>
+                                            <input type="number" min="0" name="no_of_employee" value="{{account.no_of_employee}}"  placeholder="Number of Employees.">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="company_status">Company status</label>
+                                                <select name="company_status" class="wide">
+                                                    <option data-display="Company Status">Company Status</option>
+                                                    <option value="Active">Active</option>
+                                                    <option value="Not Active">Not Active</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="category">Category</label>
+                                            <select name="category" class="wide">
+                                                <option data-display="Class of Company">Class of Company</option>
+                                                <option value="Active">Private</option>
+                                                <option value="Not Active">Government</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="input_field">
+                                                    <label style="font-weight: bold" class="lbl" for="state">State</label>
+                                                <select name="state"  class="wide">
+                                                    <option data-display="State">State</option>
+                                                    <option value="male">Madhaya Predesh</option>
+                                                    <option value="female">Utter Predesh</option>
+                                                    
+                                                    <option value="male">Himachal Predesh</option>
+                                                    <option value="female">Chhattis Garh</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <pre>
+
+                                    </pre>
+                                    <div class="col-md-12">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="area">Area</label>
+                                            <input type="file" name="area" id="image" accept="image/*" placeholder="House no.,Area/colony name  ">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="city">City</label>
+                                            <input type="text"  value="{{account.city}}"  name="city" placeholder="City">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="city_pincode">City pincode</label>
+                                            <input type="text" name="city_pincode"  value="{{account.city_pincode}}"  placeholder="City Pincode ">
+                                        </div>
+                                    </div>
+                                    
+                                    <pre>
+
+                                    </pre>
+                                    <div class="col-md-12">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="website">Website</label>
+                                            <input type="text" name="website"  value="{{account.website}}" placeholder="Website/Portfolio link">
+                                        </div>
+                                    </div>
+                        
+                                    
+                                    <div class="col-md-12">
+                                            <label style="font-weight: bold" class="lbl" for="email">uplode company logo</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                              <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                              </button>
+                                            </div>
+                                            <div class="custom-file">
+                                              <input type="file" name="company_logo" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                                              <label class="custom-file-label" for="inputGroupFile03">Upload Company logo</label>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input_field">
+                                                <label style="font-weight: bold" class="lbl" for="email">Describe</label>
+                                            <textarea name="description"  value="{{account.company_desc}}"  cols="30" rows="10" placeholder="Describe more about company "></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="submit_btn">
+                                            <button class="boxed-btn3 w-100" type="submit">Save informations</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--===== personal informations ======-->
+                        <pre>
+
+                        </pre>
+                        <div class="descript_wrap white-bg">
+                            <div class="single_wrap">
+                                <h4>Responsibility</h4>
+                                <ul>
+                                    <li>The applicants should have experience in the following areas.
+                                    </li>
+                                    <li>Have sound knowledge of commercial activities.</li>
+                                    <li>Leadership, analytical, and problem-solving abilities.</li>
+                                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                                </ul>
+                            </div>
+                            <div class="single_wrap">
+                                <h4>Qualifications</h4>
+                                <ul>
+                                    <li>The applicants should have experience in the following areas.
+                                    </li>
+                                    <li>Have sound knowledge of commercial activities.</li>
+                                    <li>Leadership, analytical, and problem-solving abilities.</li>
+                                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                                </ul>
+                            </div>
+                            <div class="single_wrap">
+                                <h4>Benefits</h4>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                            </div>
+                        </div>
+                        
+                    </div> 
+                    <!--   user Summery  -->
+                    <div class="col-lg-4">
+                        <div class="job_sumary">
+                            <div class="summery_header">
+                                <h3>Company Summery</h3>
+                            </div>
+                            <div class="job_content">
+                                <ul>
+                                    <li>Published on: <span>12 Nov, 2019</span></li>
+                                    <li>Vacancy: <span>2 Position</span></li>
+                                    <li>Salary: <span>50k - 120k/y</span></li>
+                                    <li>Location: <span>California, USA</span></li>
+                                    <li>Job Nature: <span> Full-time</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="share_wrap d-flex">
+                            <span>Share at:</span>
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                            </ul>
+                        </div>
+                        <div class="job_location_wrap">
+                            <div class="job_lok_inner">
+                                <div id="map" style="height: 200px;"></div>
+                                <script>
+                                  function initMap() {
+                                    var uluru = {lat: -25.363, lng: 131.044};
+                                    var grayStyles = [
+                                      {
+                                        featureType: "all",
+                                        stylers: [
+                                          { saturation: -90 },
+                                          { lightness: 50 }
+                                        ]
+                                      },
+                                      {elementType: 'labels.text.fill', stylers: [{color: '#ccdee9'}]}
+                                    ];
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                      center: {lat: -31.197, lng: 150.744},
+                                      zoom: 9,
+                                      styles: grayStyles,
+                                      scrollwheel:  false
+                                    });
+                                  }
+                                  
+                                </script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!----------------------end job details area------------------------->    
+
+{% endblock %}

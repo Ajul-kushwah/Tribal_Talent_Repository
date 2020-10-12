@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Profile</title>
+
+    <script>
+        function action(){
+        prompt("do you want to delete account ?");}
+    </script>
+</head>
+<body>
+<h1>Welcome :</h1>
+<h2>Username : </h2>{{ account.company_username }}
+<h2>Category :</h2>{{ account.category }}
+<ul>
+    <li><a href="{% url 'edit_account' %}" class="btn btn-primary">Edit Account</a></li>
+    <li><a href="{% url 'add_company_information' %}" class="btn btn-primary">Add Information</a></li>
+    <li><a href="{% url 'change_password' %}" class="btn btn-primary">Change Password</a></li>
+    <li><a onclick="action()" href="{% url 'delete-account' %}" class="btn btn-primary">Delete Account</a></li>
+</ul>
+
+
+<table border="2" align="center" style="height:200px">
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <td>{{ account.company_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Type</th>
+                                        <td>{{ account.company_type }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <td>{{ account.company_desc }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>City</th>
+                                        <td>{{ account.location }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email Address</th>
+                                        <td>{{ user.email }}</td>
+                                    </tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<div>
+<h1>Registeration</h1>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="User's or company name" required><br>
+        <input type="text" name="username" placeholder="UserName" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        Category :<input type="radio" name="category" value="youth-user" required>YouthUser <input type="radio" name="category" value="company-user" required>CompanyUser<br>
+        <input type="password" name="password1" placeholder="Password" required><br>
+        <input type="password" name="password2" placeholder="Confirm Password" required ><br>
+        <input type="submit">
+    </form>
+<p>Already have an account --> <a href="{% url 'login' %}">Login here</a></p>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{ message }} </h3>
+        {% endfor%}
+    </div>
+</div>
+</body>
+</html>
