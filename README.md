@@ -1,2 +1,2 @@
 # Tribal_Talent_Repository
-<img src="myproject/tribal-talent-repository.png">
+<img src="./myproject/tribal-talent-repository.png">
