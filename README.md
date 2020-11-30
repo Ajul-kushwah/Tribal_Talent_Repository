@@ -1,2 +1,2 @@
 # Tribal_Talent_Repository
-<img src="https://drive.google.com/file/d/1e0_awr-zZPu7onATmxgkaq5JaS-Qcqpx/view?usp=sharing" width="80%">
+<img src="https://media.istockphoto.com/vectors/good-and-evil-heart-tribal-tattoo-vector-id1179318131" width="80%">
