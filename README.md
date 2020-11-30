@@ -1,2 +1,2 @@
 # Tribal_Talent_Repository
-<img src="Home.png" width="80%">
+<img src="Home.PNG" width="80%">
