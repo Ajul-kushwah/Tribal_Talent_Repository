@@ -12,7 +12,7 @@
                     <div class="col-md-12">   
                         <div class="front ">
                             <img src="{{account.image.url}}" alt="front-img" class="front-img ">
-                            <a style="text-transform:capitalize;color: #000;" href="#" class="name">{{ user.first_name }} {{user.last_name}}</a>
+                            <a style="text-transform:capitalize;" href="#" class="name">{{ user.first_name }} {{user.last_name}}</a>
                         </div>
                         <a style="text-transform:capitalize" href="#" class="namee">{{ user.first_name }} {{user.last_name}}</a>
                     </div>
@@ -24,12 +24,8 @@
         <div class="container simple-text">
             <div class="row">
                 <div class="col-3">
-                    <p>{{account.caption | safe }}
-                        Django Lover
-                       Python Developer :-)
-                       <-> <->
-                          L 
-                        )---(  
+                    <p>
+                        {{account.caption | safe }}
                     </p>
                 </div>
             </div>
@@ -60,7 +56,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="job_details_header">
-                            <div class="single_jobs white-bg d-flex justify-content-between">
+                            <!-- <div class="single_jobs white-bg d-flex justify-content-between">
                                 <div class="jobs_left d-flex align-items-center">
                                     <div class="thumb">
                                         <img src="other/img/svg_icon/1.svg" alt="">
@@ -82,7 +78,7 @@
                                         <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!--------     About me        --------->
                         <div class="descript_wrap white-bg">
@@ -248,8 +244,8 @@
                                 <ul>
                                     <li>Join Date: <span>{{user.date_joined}}</span></li>
                                     <li>Last login: <span>{{user.last_login}}</span></li>
-                                    <li>Salary: <span>50k - 120k/y</span></li>
-                                    <li>Location: <span>California, USA</span></li>
+                                    <!-- <li>Salary: <span>50k - 120k/y</span></li> -->
+                                    <li>Location: <span>{{account.city}},  {{ account.country }}</span></li>
                                     <li>Job Nature: <span> Full-time</span></li>
                                 </ul>
                             </div>
@@ -361,21 +357,7 @@
                       
                       <button type="submit" class="btn btn-success">Add</button>
                     </form>
-                    <hr>
-                    <div class="">
-                        <h5>Remove Skill:</h5>
-                        {% if skill %}
-                            {% for i in skill %}
-                        <a href="{% url 'delete_skill' i.id %}"><button class="delete btn btn-outline-success ml-2 mt-2">
-                            <li>{{ i.skill_name }}<i class="fa fa-times ml-1" aria-hidden="true"></i></li>
-                        </button></a>
-                            {% endfor %}    
-                        
-                            {% else %}
-                        <p>No skill add yet </p>
-                            
-                        {% endif %}
-                    </div>
+                    
                   </div>
                   <div class="modal-footer">   
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -183,3 +183,18 @@ SOCIAL_AUTH_TWITTER_SECRET = '' # Twitter Consumer Secret
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =''  # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =''  # Google Consumer Secret
 
+CKEDITOR_CONFIGS = {
+'default': {
+    'toolbar':[
+                { 'name': 'basicstyles', 'items': [ 'Bold', 'Italic','Underline','-','Undo','Redo' ] },
+                { 'name': 'clipboard', 'items': [ 'Cut', 'Copy','Paste' ] },
+                { 'name': 'styles', 'items': [ 'Styles', 'Format','Font','FontSize' ] },
+                { 'name': 'emoji_minChars', 'items': [ 'All' ] },
+                { 'name': 'paragraph', 'items' : [ 'NumberedList','BulletedList','-','Blockquote' ] },
+                { 'name': 'links', 'items' : [ 'Link','Unlink' ] },
+                { 'name': 'insert', 'items' : [ 'Image','Smiley', 'SpecialChar' ] },
+            ], #You can change this based on your requirements.
+    'width': 'auto',
+
+          },
+    }

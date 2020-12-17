@@ -1,5 +1,5 @@
 {% extends 'base2.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -142,7 +142,7 @@
                                     <div class="single_jobs white-bg d-flex justify-content-between">
                                         <div class="jobs_left d-flex align-items-center">
                                             <div class="thumb">
-                                                <img src="other/img/svg_icon/1.svg" alt="">
+                                                <img src="{% static 'other/img/svg_icon/4.svg' %}" alt="">
                                             </div>
                                             <div class="jobs_conetent">
                                                 <a href="{% url 'youth_user_details' user.id %}"><h4 style="text-transform:capitalize">{{ user.firstname }}</h4></a>

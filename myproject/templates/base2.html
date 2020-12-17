@@ -44,6 +44,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,700&display=swap"
      rel="stylesheet">
 
+    <!--  lightbox css file  -->
+    
+    <link rel="stylesheet" href="{% static './lightbox2-dev/dist/css/lightbox.min.css' %}">
+
      <style>
 
     
@@ -67,8 +71,11 @@
         /* "{% static './img/testimonials/subscribe-bg.png' %}" */
         .profile {
             height: 500px;
-            background: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url({{account.cover_photo.url}}) !important;
-            background: no-repeat;
+            background: url({{account.cover_photo.url}}) !important;
+            /* background: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url({{account.cover_photo.url}}) !important; */
+            
+            background-repeat: no-repeat;
+            background-size: cover;
             
         }
 
@@ -84,6 +91,7 @@
             font-size: 2.3em;
             margin-left: 1.7rem;
             top: -3px;
+            color: white;
         }
         .profile .namee{
             display: none;
@@ -174,7 +182,7 @@
                                                                     height: 36px; 
                                                                     margin-right: 10px;" 
                                                              srcc="https://www.tutorialrepublic.com/examples/images/avatar/2.jpg" 
-                                                             src="{% static 'other/img/favicon.jpg' %}"
+                                                             src="{% static 'other/img/svg_icon/4.svg' %}"
                                                              class="avatar" 
                                                              alt="Avatar">{{user.username }} <i class="ti-angle-down"></i>
                                                     </a>
@@ -198,7 +206,7 @@
                                         </div>
                                         {% endif %}
                                         <div class="d-none d-lg-block">
-                                            <a class="boxed-btn3" href="#">Post a Job</a>
+                                            <a class="boxed-btn3" href="{% url 'login'%}">Do Promote</a>
                                         </div>
                                     </div>
                                 </div>
@@ -236,9 +244,9 @@
                                 </a>
                             </div>
                             <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
+                                tribal@support.com <br>
+                                +91 808 555 743 <br>
+                                01/shop, water works road Toppura,Vidisha, MP.
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -331,6 +339,9 @@
     <!--  Jquery js file  -->
     <script src="{% static './js/jquery.3.4.1.js' %}"></script>
 
+    <!--  lightbox js file  -->
+    <script src="{% static './lightbox2-dev/dist/js/lightbox-plus-jquery.min.js' %}"></script>
+   
     <!-- JS here -->
     <script src="{% static 'other/js/vendor/modernizr-3.5.0.min.js' %}"></script>
     <script src="{% static 'other/js/vendor/jquery-1.12.4.min.js' %}"></script>
@@ -364,7 +375,7 @@
     
     <script src="{% static 'other/js/main.js' %}"></script>
     
-   
+    
     <!--=====================other==============================-->
 
     {% block js%}

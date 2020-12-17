@@ -1,256 +1,26 @@
+{% extends 'base2.html'%}    
 {% load static %}
 
-<!DOCTYPE html>
 
-<html lang="en">
+{% block content %}
+    
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12">
+                  <div class="bradcam_text">
+                      <h3>Images </h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!--/ bradcam_area  -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tribal Talent Repository</title>
-
-
-    <!--  Bootstrap css file  -->
-    <link rel="stylesheet" href="{% static './css/bootstrap.min.css' %}">
-
-    <!--  font awesome icons  -->
-    <link rel="stylesheet" href="{% static './css/all.min.css' %}">
-
-
-    <!--  Magnific Popup css file  -->
-    <link rel="stylesheet" href="{% static './vendor/Magnific-Popup/dist/magnific-popup.css' %}">
-
-
-    <!--  Owl-carousel css file  -->
-    <link rel="stylesheet" href="{% static './vendor/owl-carousel/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static './vendor/owl-carousel/css/owl.theme.default.min.css' %}">
-
-
-    <!--  custom css file  -->
-    <link rel="stylesheet" href="{% static './css/style.css' %}">
-
-    <!--  Responsive css file  -->
-    <link rel="stylesheet" href="{% static './css/responsive.css' %}">
 
     
-    <!--  lightbox css file  -->
-    
-    <link rel="stylesheet" href="{% static './lightbox2-dev/dist/css/lightbox.min.css' %}">
-
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-    
-
-    <style>
-/*  for dropdown hover */
-.header_area .main-menu ul li .submenu {
-  position: absolute;
-  left: 58%;
-  top: 120%;
-  background: #fff; 
-  /* background: #F5EEF8;  */
-  width: 200px;
-  z-index: 2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
-  opacity: 0;
-  visibility: hidden;
-  text-align: left;
-  -webkit-transition: 0.6s;
-  -moz-transition: 0.6s;
-  -o-transition: 0.6s;
-  transition: 0.6s;
-  border: 1px solid gray;
-  border-radius: 4px;  
-
-  margin-top:10px;
-  box-shadow: 10px 10px 35px rgba(0,0,0,0.125),
-              -10px -10px 35px rgba(0,0,0,0.125); 
-}
-
-.header_area .main-menu ul li .submenu li {
-  display: block;
-  margin: 0;
-}
-
-.header_area .main-menu ul li .submenu li a {
-  padding: 10px 15px;
-  position: inherit;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  display: block;
-  color: #000;
-}
-
-.header_area .main-menu ul li .submenu li a::before {
-  display: none;
-}
-
-.header_area .main-menu ul li .submenu li:hover a {
-  color: #000;
-}
-
-.header_area .main-menu ul li:hover > .submenu {
-  opacity: 1;
-  visibility: visible;
-  top: 100%;
-}
-
-.header_area .main-menu ul li:hover > a::before {
-  opacity: 1;
-}
-/* / for dropdown hover */
-
-
-
-.header_area .main-menu ul li a{
-  color: #644def;
-}
-
-.header_area .main-menu .right{
-
-    padding-top:10px; 
-    width: 300px;
-    height: 10px;
-}
-
-.header_area .main-menu .right ul li a{
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-
-.header_area .main-menu .right img{
-  margin: 0 10px;
-  margin-bottom: 12px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-
-.header_area .main-menu .right a{
-  text-align: right;
-  margin-top: 0px;
-}
-
-.header_area .main-menu .right a p{
-    font-size: 17px;
-    /* margin-top: 28px; */
-}
-
-.header_area .main-menu .right a p span{
-  font-size: 10px;
-  margin-bottom: 0px;
-}
-
-.header_area .main-menu .right ul li{
-  position: relative;
-  list-style: none;
-}
-
-.header_area .main-menu .right .dropdown .dropdown-menu{
-    margin-left:90px;
-    margin-top:12px;
-    box-shadow: 10px 10px 35px rgba(0,0,0,0.125),
-              -10px -10px 35px rgba(0,0,0,0.125);  
-}
-
-.header_area .main-menu .right .dropdown .dropdown-menu::before{
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: 15px;
-    border: 10px solid;
-    border-color: transparent transparent #fff transparent;
-}
-.header_area .main-menu .right .dropdown .dropdown-menu .fas{
-    margin-right:10px;  
-}
-.header_area .main-menu ul li .submenu .fa{
-		margin-right:10px;
-		}
-		
-</style>
-
-
-</head>
-
-<body>
-
-
-    <!--  ======================= Start Header Area ============================== -->
-
-    <header class="header_area">
-        <div class="main-menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><h2>Tribal<span> Talent</span></h2><imgg ssrc="{% static './img/logo.png' %}" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="mr-auto"></div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about' %}">about</a>
-                        </li>
-                        <li class="nav-item">
-                            <!--<i class="fa fa-angle-down"-->
-                            <a class="nav-link" href="#">services v</a>
-                            <ul class="submenu">
-                                <li><a href="{% url 'all_youth_user' %}"><i class="fa fa-users" aria-hidden="true"></i>All Users</a></li>
-                                <li><a href="{% url 'all_companies_user' %}"><i class="fa fa-user-circle-o" ></i>All Companies </a></li>
-                                <!-- <li><a href="elements.html">elements</a></li> -->
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">blog</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact' %}" style="font-weight: bold ">contact</a>
-                        </li>
-                        {% if user.is_authenticated %}
-
-                        <div class="right nav-item">
-                                <ul>
-                                    <li class="nav-item dropdown" >
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <p style="font-weight: bold">{{user.username}}<br><br><br><br><br><br><br><span>User</span></p><img src="{% static './img/testimonials/user-avatar.png' %}" srrc="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" alt="Admin" width="40"><i class="fas fa-angle-downn"></i>
-                                        </a>
-                                        
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user-alt"></i>Profile</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-cog"></i>Settings</a>
-                                            <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Log Out</a>
-                                        </div>
-                                            
-                                    </li>
-                                </ul>
-                        </div>
-                        {% else %}
-                        <a href="{% url 'login' %}"><button type="button"  class="btn button primary-button text-uppercase">login/Sign up</button></a>
-                        {% endif %}
-
-                    </ul>
-                    
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!--  ======================= End Header Area ============================== -->
-
-    <!--  ======================= Start Main Area ================================ -->
-    <main class="site-main">
-
-
-
-        <!--images caps-->
+    <!--images caps-->
     <div class="container ">
         <div class="row">
         {% if images %}    
@@ -335,64 +105,7 @@
   </div>
 </div>
 <!-- add images form -->
+<br>
+<br>
 
-
-    </main>
-    <!--  ======================= End Main Area ================================ -->
-
-    <footer class="footer-area">
-        <div class="container">
-            <div class="">
-                <div class="site-logo text-center py-4">
-                    <a href="#"><img src="{% static './img/logo.png' %}" alt="logo"></a>
-                </div>
-                <div class="social text-center">
-                    <h5 class="text-uppercase">Follow me</h5>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-                <div class="copyrights text-center">
-                    <p class="para">
-                        Copyright ©2019 All rights reserved | This template is made with by
-                        <a href="#"><span style="color: var(--primary-color);">Tribal Talent Repository</span></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-            document.querySelector(".right ul li").addEventListener("click", function(){
-                  this.classList.toggle("active");
-            });
-    </script>
-
-    <!--  Jquery js file  -->
-    <script src="{% static './js/jquery.3.4.1.js' %}"></script>
-
-    <!--  Bootstrap js file  -->
-    <script src="{% static './js/bootstrap.min.js' %}"></script>
-
-    <!--  isotope js library  -->
-    <script src="{% static './vendor/isotope/isotope.min.js' %}"></script>
-
-    <!--  Magnific popup script file  -->
-    <script src="{% static './vendor/Magnific-Popup/dist/jquery.magnific-popup.min.js' %}"></script>
-
-    <!--  Owl-carousel js file  -->
-    <script src="{% static './vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
-
-    <!--  custom js file  -->
-    <script src="{% static './js/main.js' %}"></script>
-
-    
-    <!--  lightbox js file  -->
-    <script src="{% static './lightbox2-dev/dist/js/lightbox-plus-jquery.min.js' %}"></script>
-    
-
-
-</body>
-
-</html>
+{% endblock %}

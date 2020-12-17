@@ -12,6 +12,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+first_time_login = 0
+
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -21,7 +23,16 @@ def login(request):
         print('user value=',user)
         if user is not None:
             auth.login(request,user)
-            return redirect('/')
+            # if first_time_login :
+            #     print(first_time_login)
+            #     return redirect('settings')
+            if request.session.get('new') == 'yes':
+                print('yes')
+                return redirect('settings')
+            else:
+                request.session['new'] = 'no'
+                print('new=',request.session.get('new'))
+                return redirect('/')
         else:
             messages.error(request,'Invalid username & password')
            # messages.info(request,'Invalid username and password')
@@ -57,6 +68,8 @@ def register(request):
                     youth = TribalYouth(user=user,username=username,email=email,category=category)
                     youth.save()
                     messages.success(request,'Register successfully')
+                    request.session['new']='yes'
+                    print('new = ',request.session.get('new'))
                     return redirect('login')
 
                     #d={'d':username}
@@ -434,3 +447,7 @@ def profile_update(request):
         account = Company.objects.get(user=request.user)
         context = {'account': account}
         return render(request, 'company/company_profile_update.html', context)
+
+def delete_account(request):
+    request.user.delete()
+    return HttpResponse('delete')
