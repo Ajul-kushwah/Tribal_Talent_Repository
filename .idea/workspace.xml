@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5cb966f5-5d2e-48b1-895b-d86ad03d979e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/templates/accounts/forget_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/templates/accounts/forget_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/templates/accounts/login-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/templates/accounts/login-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/templates/user/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/templates/user/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/templates/user/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/templates/user/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/templates/user/user_profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/templates/user/user_profile_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/templates/myapp/companies.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/templates/myapp/companies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/templates/myapp/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/templates/myapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/templates/myapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/templates/myapp/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/templates/myapp/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myapp/templates/myapp/youth_user_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myapp/templates/myapp/youth_user_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/myproject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/talent_images/templates/talent_images/images.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/talent_images/templates/talent_images/images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myproject/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/templates/base2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myproject/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,48 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/myapp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-422">
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myproject/accounts/urls.py">
+        <entry file="file://$PROJECT_DIR$/myproject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/accounts/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/accounts/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-428">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -85,6 +34,7 @@
         <option value="$PROJECT_DIR$/myproject/myproject/settings.py" />
         <option value="$PROJECT_DIR$/myproject/accounts/urls.py" />
         <option value="$PROJECT_DIR$/myproject/accounts/views.py" />
+        <option value="$PROJECT_DIR$/myproject/settings.py" />
       </list>
     </option>
   </component>
@@ -120,33 +70,6 @@
               <item name="Tribal Talent Repository" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tribal Talent Repository" type="462c0819:PsiDirectoryNode" />
               <item name="myproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tribal Talent Repository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tribal Talent Repository" type="462c0819:PsiDirectoryNode" />
-              <item name="myproject" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tribal Talent Repository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tribal Talent Repository" type="462c0819:PsiDirectoryNode" />
-              <item name="myproject" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tribal Talent Repository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tribal Talent Repository" type="462c0819:PsiDirectoryNode" />
-              <item name="myproject" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tribal Talent Repository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tribal Talent Repository" type="462c0819:PsiDirectoryNode" />
-              <item name="myproject" type="462c0819:PsiDirectoryNode" />
-              <item name="myapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,48 +159,15 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myproject/myproject/settings.py">
+    <entry file="file://$PROJECT_DIR$/myproject/myproject/settings.py" />
+    <entry file="file://$PROJECT_DIR$/myproject/myapp/urls.py" />
+    <entry file="file://$PROJECT_DIR$/myproject/accounts/views.py" />
+    <entry file="file://$PROJECT_DIR$/myproject/accounts/models.py" />
+    <entry file="file://$PROJECT_DIR$/myproject/accounts/urls.py" />
+    <entry file="file://$PROJECT_DIR$/myproject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/myapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
         </state>
       </provider>
     </entry>
