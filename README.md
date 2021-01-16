@@ -11,4 +11,4 @@
 <img src="Screenshots/register.PNG" width="">
 
 <h2>Register</h2>
-<img src="static/other/img/triballogo.PNG" width="">
+<img src="static/other/img/triballogo.png" width="">
