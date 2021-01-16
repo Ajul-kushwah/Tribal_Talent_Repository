@@ -1,4 +1,4 @@
-{% extends 'base2.html '%}
+{% extends 'base2.html' %}
 
 
 {% block content %}   
@@ -16,8 +16,15 @@
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Get Promotion and Sponsorship</h3>
                             <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide platform to Tribal to showcase Talent.</p>
                             <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                
+                                {% if not user.is_authenticated %}
+                                <a href="{% url 'login'%}" class="boxed-btn3">Get Start</a>
+                                {% else %}
                                 <a href="{% url 'profile_update'%}" class="boxed-btn3">Add your Talent</a>
+                                {% endif %}
                             </div>
+
+                            
                         </div>
                     </div>
                 </div>
