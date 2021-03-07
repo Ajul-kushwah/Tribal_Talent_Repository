@@ -7,6 +7,7 @@ urlpatterns = [
     path('add-personal-info',views.add_personal_info,name="add-personal-info"),
 
     path('login',views.login,name="login"),
+    path('demo_login',views.demo_login,name="demo_login"),
     path('logout',views.logout,name="logout"),
     path('profile',views.profile,name="profile"),
     path('settings',views.settings_,name="settings"),

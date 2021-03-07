@@ -13,6 +13,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 first_time_login = 0
+def demo_login(request):
+    user = auth.authenticate(username='demo',password='demo')
+    if user is not None:
+        auth.login(request,user)
+        return redirect('/')
 
 def login(request):
     if request.method=='POST':

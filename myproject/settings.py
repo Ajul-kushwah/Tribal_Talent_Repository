@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u#hf3!f2a@+agh^$=(!91*wi2okc2dp6-blj(9xx*et61b*cr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -132,7 +132,7 @@ STATIC_URL = '/static/'#add
 
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
-    '/var/www/static/',
+    # '/var/www/static/',
 ]
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')

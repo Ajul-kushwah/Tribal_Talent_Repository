@@ -1,0 +1,101 @@
+/*
+    Theme Name: Spa
+    Theme URI: https://themeies.com
+    Author: Themeies
+    Author URI: https://themeies.com
+    Version: 1.0
+    Description: Spa is a Landing HTML5 Template.
+*/
+/*
+    Table of Context
+    -------------------------------
+    01.
+*/
+
+.site-main .team .single-memb {
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .site-main .team .single-memb {
+    margin-bottom: 30px;
+  }
+}
+
+.site-main .team .single-memb .memb-details {
+  background-color: #fff;
+  /*-webkit-box-shadow: 0 5px 20px #f0f0f0;*/
+  box-shadow: 0 5px 20px #f0f0f0;
+  max-width: calc( 100% - 60px);
+  margin: -50px auto 0;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1199px) {
+  .site-main .team .single-memb .memb-details {
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .site-main .team .single-memb .memb-details {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+}
+
+.site-main .team .single-memb .memb-details h6 {
+  color: #263a41;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.site-main .team .single-memb .memb-details span {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.site-main .team .single-memb .memb-social {
+  margin-top: -30px;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-main .team .single-memb .memb-social a {
+  border: 1px solid #30383b;
+  border-radius: 50%;
+  color: #30383b;
+  display: inline-block;
+  font-size: 13px;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 5px;
+  height: 30px;
+  width: 30px;
+}
+
+.site-main .team .single-memb .memb-social a:hover {
+  background-color: #ff817e;
+  border-color: #ff817e;
+  color: #fff;
+}
+
+.site-main .team .single-memb:hover .memb-details {
+  margin-top: -84px;
+}
+
+.site-main .team .single-memb:hover .memb-social {
+  margin-top: 0;
+  opacity: 1;
+  visibility: visible;
+}

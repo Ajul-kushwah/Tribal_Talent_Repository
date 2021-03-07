@@ -137,26 +137,33 @@
                                                 <input type="password" name="password" class="form-control"
                                                     id="password" placeholder="Password" required>
                                             </div>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                         id="customCheck1" checked="">
                                                     <label class="custom-control-label" for="customCheck1">Remember
                                                         me</label>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <button type="submit" id="login-btn"
                                                 class="btn btn-primary btn-block">Login</button>
-
+                                            
                                             <div class="text-center pt-2">
-                                                <a class="btn btn-link text-primary" href="{% url 'forget' %}">Forgot
-                                                    Your Password?</a>
+                                                <a class="btn btn-link text-primary" href="{% url 'forget' %}">
+                                                    Forgot Your Password?
+                                                </a>
                                             </div>
+                                            <a href="{% url 'demo_login'%}" class="btn btn-primary btn-block">
+                                                Demo Login
+                                            </a>
+
                                         </form>
                                         <h4 class="mb-2"> <small class="ml-2 mr-2">OR</small> </h4>
                                         <a href="#" hreff="{% url 'social:begin' 'google-oauth2' %}"
-                                            class="btn btn-danger btn-block ">Google</a>
+                                            class="btn btn-danger btn-block ">
+                                            Google
+                                        </a>
                                         <button class="btn btn-primary btn-block ">Facebook</button>
                                     </div>
 
